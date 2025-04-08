@@ -1,9 +1,38 @@
-# SET YOUR SETTINGS ON package.json (main, name)
+# Library API
+This is the backend server for a full-featured Library Management System. It handles user authentication, book and author CRUD operations, filtering, pagination, and role-based access (admin/user).
 
-# RUN IN TERMINAL NPM I TO INSTALL DEPENDENCIES
+## Features
+### Authentication
+Secure signup & login (with Argon2 hashing)
 
-# TO START YOUR PROJECT WRITE NPM RUN START
+JWT-based authentication stored in HTTP-only cookies
 
-# filesystem.js IS EXAMPLE OF HOW BACKEND WORKS WITH CRUD
+Role-based access control (user & admin)
 
-# ENV FILE IS TO SET YOUR SETTINGS
+### Books
+CRUD operations on books (admin only)
+
+Supports pagination and filtering (by title)
+
+ISBN validation (###-##-####-#)
+
+### Authors
+CRUD operations on authors (admin only)
+
+Authors include their associated books (with aggregation)
+
+Filtering by ID with sort direction
+
+## Tech Stack
+Runtime: Node.js
+
+Framework: Express
+
+Database: PostgreSQL
+
+Auth: JWT + Argon2
+
+Validation: express-validator
+
+Error Handling: Custom error class with centralized middleware
+
